@@ -2,11 +2,11 @@
 {{config(materialized='table')}}
 with
     customers as (
-       {{ ref("stg_customer")}}
+       select * from {{ ref("stg_customer")}}
     ),
 
     orders as (
-        {{ ref("stg_orders")}}
+        select * from {{ ref("stg_orders")}}
     ),
 
     customers_orders as (
